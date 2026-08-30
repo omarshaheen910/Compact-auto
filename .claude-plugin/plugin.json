@@ -1,0 +1,17 @@
+{
+  "name": "compact-auto",
+  "version": "0.1.0",
+  "description": "Gates Claude Code's auto-compact. When the context window crosses a threshold (40% by default), compaction is held back until the user approves it, and a focused handoff note is written before compacting and re-injected afterwards.",
+  "keywords": [
+    "context",
+    "compact",
+    "auto-compact",
+    "context-management"
+  ],
+  "author": {
+    "name": "Omar Shaheen",
+    "url": "https://github.com/omarshaheen910"
+  },
+  "repository": "https://github.com/omarshaheen910/Compact-auto",
+  "license": "MIT"
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "compact-auto",
+  "version": "0.1.0",
+  "description": "Ask-before-compacting for Claude Code",
+  "owner": {
+    "name": "Omar Shaheen",
+    "url": "https://github.com/omarshaheen910"
+  },
+  "plugins": [
+    {
+      "name": "compact-auto",
+      "source": "./",
+      "description": "Holds Claude Code's automatic compaction until you approve it, and carries a focused handoff note across the compaction boundary.",
+      "category": "productivity",
+      "tags": [
+        "context",
+        "compaction",
+        "hooks",
+        "context-management"
+      ]
+    }
+  ]
+}

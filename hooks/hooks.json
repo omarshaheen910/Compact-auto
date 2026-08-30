@@ -1,0 +1,44 @@
+{
+  "description": "Hold automatic compaction until the user approves it, and carry a focused handoff note across the compaction boundary.",
+  "hooks": {
+    "PreCompact": [
+      {
+        "matcher": "auto",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": ["${CLAUDE_PLUGIN_ROOT}/hooks/scripts/precompact_gate.py"],
+            "timeout": 15,
+            "statusMessage": "compact-auto: checking approval"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": ["${CLAUDE_PLUGIN_ROOT}/hooks/scripts/prompt_watch.py"],
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": ["${CLAUDE_PLUGIN_ROOT}/hooks/scripts/session_restore.py"],
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
