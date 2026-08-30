@@ -1,3 +1,16 @@
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Local plugin state (only ever written outside the repo, but belt and braces)
+*.consumed
+*.bak
+
+# Editors / OS
+.vscode/
+.idea/
 .DS_Store
+Thumbs.db

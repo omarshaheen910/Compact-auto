@@ -6,6 +6,8 @@ The handoff note written just before compacting is the part that must survive,
 so it goes straight back into the fresh context here.
 """
 
+from __future__ import annotations  # keeps `Path | None` working on Python 3.8/3.9
+
 import sys
 import time
 from pathlib import Path

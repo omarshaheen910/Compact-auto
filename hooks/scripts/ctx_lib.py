@@ -147,8 +147,9 @@ def context_usage(transcript_path: str):
     Claude Code does not hand hooks a context percentage, so we take it from the
     most recent assistant message in the transcript: its input tokens plus both
     cache buckets are, by definition, everything that was in the window on that
-    request. Returns (0, window, 0.0) when the transcript is unreadable, which
-    makes every caller fail open.
+    request, and its output tokens are already part of the next one. Returns
+    (0, window, 0.0) when the transcript is unreadable, which makes every caller
+    fail open.
     """
     used, model = 0, ""
     try:
